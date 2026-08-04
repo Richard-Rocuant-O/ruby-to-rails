@@ -1,0 +1,30 @@
+<h1>Articulos</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %>
+      <a href="<%= article_path(article) %>">Ver detalles</a>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Nuevo Articulo", new_article_path %>
+</p>
+
+<p><%= link_to "Acerca de nosotros", about_path %></p>
+
+<%# 
+article_path(article): viene de resources :articles, que genenera el helper singular 'article_path' para la ruta 'show: /articles/:id'.
+se queda como <a href="/articles/5">Ver detalles</a>. seria AriclesController#Show
+
+new_article_path: tambien viene de 'resources :articles' pero la ruta para el formulario de creacion /articles/new -> ArticlesController#new.
+Se usa dentro de link_to "Nuevo Articulo"m new_article_path que genera '<a href="/articles/new">Nuevo Articulo</a>.'
+
+about_path:
+vienve de la ruta custom 'get "about"', to: 'pages#about',
+Como no se uso 'resources', Rails no la nombra automaticamente - el nombre 'about_path' sale de que la urta usa get 'about' (el string 'about' se convierte en el nombre del helper). Apunta a /about → PagesController#about.
+
+
+ %>

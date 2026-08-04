@@ -1,0 +1,21 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+<p>
+  <%= link_to "Ver comentarios", article_comments_path(@article) %>
+</p>
+
+<p>
+  <%= link_to "Volver", root_path %>
+</p>
+
+
+
+<%# 
+Cuando se anida 'resources', Rails arma URLs que incluyen article_id.
+1. article_comments_path(article) -> GET /articles/:article_id/comments -> comments#index
+
+2. article_comment_path(article, comment) -> GET /articles/:article_id/comments/:id -> comments#show
+
+3. new_article_comment_path(article) -> GET /articles/:article_id/comments/new -> comments#new
+
+ %>

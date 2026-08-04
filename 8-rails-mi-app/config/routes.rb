@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'pages/hola'
+  get '/posts', to:'posts#index'
+  get '/hola', to:'pages#hola'
+
+  resources :articles do
+    resources :comments
+  end
+
+  get 'about', to: 'pages#about'
+  root 'articles#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,3 +22,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
+=begin
+GET    /articles          -> articles#index
+GET    /articles/new      -> articles#new
+POST   /articles          -> articles#create
+GET    /articles/:id      -> articles#show
+GET    /articles/:id/edit -> articles#edit
+PATCH  /articles/:id      -> articles#update
+DELETE /articles/:id      -> articles#destroy
+=end
