@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(///wsl.localhost/Ubuntu/home/ricky/**)",
+      "Read(///wsl.localhost/Ubuntu/home/ricky/RubyOnReals/**)",
+      "Bash(ls -la \"//wsl.localhost/Ubuntu/home/ricky/tev\" 2>&1 | head -50)",
+      "Bash(ls -la \"//wsl.localhost/Ubuntu/home/ricky/tev/tmp-shared\" 2>&1 | head -50)",
+      "Read(///wsl.localhost/Ubuntu/home/ricky/tev/**)",
+      "Bash(ls -la \"//wsl.localhost/Ubuntu/home/ricky/\" 2>&1 | head -50)",
+      "Read(///wsl.localhost/Ubuntu/home/**)",
+      "Bash(ls -la \"//wsl.localhost/Ubuntu/home/ricky/Tev-base\" 2>&1)",
+      "Bash(cd \"//wsl.localhost/Ubuntu/home/ricky/Tev-base/tev\" && echo \"===.ruby-version===\" && cat .ruby-version 2>&1 && echo \"===.tool-versions===\" && cat .tool-versions 2>&1 && echo \"===.rbenv-version===\" && cat .rbenv-version 2>&1)",
+      "Read(///wsl.localhost/Ubuntu/home/ricky/Tev-base/**)",
+      "Bash(cd \"//wsl.localhost/Ubuntu/home/ricky/Tev-base/tev\" && echo \"===Gemfile ruby/rails===\" && grep -n -E '^\\\\s*ruby |gem\\\\s+[\"'\"'\"']rails[\"'\"'\"']' Gemfile 2>&1)"
+    ]
+  }
+}
