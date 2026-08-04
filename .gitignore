@@ -37,3 +37,6 @@
 
 # Ignore vendored/installed gems if bundle path ever points inside the project
 /8-rails-mi-app/vendor/bundle/
+
+# Local tool config (not project-relevant)
+/.claude/
