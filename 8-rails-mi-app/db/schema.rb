@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_14_031905) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_16_200835) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -49,6 +49,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_14_031905) do
     t.integer "rating"
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
+  end
+
+  create_table "tasks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.boolean "completed"
+    t.datetime "created_at", null: false
+    t.text "descripcion"
+    t.string "title"
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "comments", "articles"

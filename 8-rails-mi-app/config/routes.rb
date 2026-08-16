@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
 
   get 'about', to: 'pages#about'
-  root 'articles#index'
+  resources :tasks, only: [:index, :show, :new, :create]
+  root 'tasks#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

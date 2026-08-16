@@ -1,0 +1,24 @@
+<h1>Nueva Tarea</h1>
+<%= form_with(model: @task, local: true) do |form| %>
+<div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+</div>
+<div>
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion %>
+</div>
+<div>
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+</div>
+<div><%= form.submit "Crear Tarea" %></div>
+<% end %>
+
+<% if @task.errors.any? %>
+<ul>
+    <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+<% end %>

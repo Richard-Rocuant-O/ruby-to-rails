@@ -1,0 +1,9 @@
+<h1>Tarea <%= @task.title %></h1>
+<p>
+<strong>Descripcion: </strong><%= @task.descripcion || "Sin descripcion" %>
+</p>
+<p>
+<strong>Completada:</strong><%= @task.completed ? "Si" : "No" %>
+</p>
+
+<p><%= link_to "Volver", root_path %></p>
