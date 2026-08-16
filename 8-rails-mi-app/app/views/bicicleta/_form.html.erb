@@ -1,0 +1,37 @@
+<%= form_with(model: bicicletum, url: bicicletum.new_record? ? bicicletas_path : bicicleta_path(bicicletum)) do |form| %>
+  <% if bicicletum.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bicicletum.errors.count, "error") %> prohibited this bicicletum from being saved:</h2>
+
+      <ul>
+        <% bicicletum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :marca, style: "display: block" %>
+    <%= form.text_field :marca %>
+  </div>
+
+  <div>
+    <%= form.label :modelo, style: "display: block" %>
+    <%= form.text_field :modelo %>
+  </div>
+
+  <div>
+    <%= form.label :rodada, style: "display: block" %>
+    <%= form.number_field :rodada %>
+  </div>
+
+  <div>
+    <%= form.label :activa, style: "display: block" %>
+    <%= form.checkbox :activa %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

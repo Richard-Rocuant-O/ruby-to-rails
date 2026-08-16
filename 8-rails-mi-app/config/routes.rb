@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bicicleta, as: :bicicletas
   get 'pages/hola'
   get '/posts', to:'posts#index'
   get '/hola', to:'pages#hola'

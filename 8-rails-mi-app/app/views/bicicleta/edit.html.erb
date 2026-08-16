@@ -1,0 +1,12 @@
+<% content_for :title, "Editing bicicleta" %>
+
+<h1>Editing bicicleta</h1>
+
+<%= render "form", bicicletum: @bicicletum %>
+
+<br>
+
+<div>
+  <%= link_to "Show this bicicleta", bicicleta_path(@bicicletum) %> |
+  <%= link_to "Back to bicicleta", bicicletas_path %>
+</div>

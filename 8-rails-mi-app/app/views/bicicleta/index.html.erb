@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Bicicleta" %>
+
+<h1>Bicicleta</h1>
+
+<div id="bicicleta">
+  <% @bicicleta.each do |bicicletum| %>
+    <%= render bicicletum %>
+    <p>
+      <%= link_to "Show this bicicleta", bicicleta_path(bicicletum) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bicicleta", new_bicicleta_path %>

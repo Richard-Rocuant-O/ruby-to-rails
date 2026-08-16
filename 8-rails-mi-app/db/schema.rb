@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_16_212608) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_16_232742) do
   create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.string "title"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bicicleta", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.boolean "activa"
+    t.datetime "created_at", null: false
+    t.string "marca"
+    t.string "modelo"
+    t.integer "rodada"
     t.datetime "updated_at", null: false
   end
 

@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bicicletum %>
+
+<p>
+  <strong>Estado: </strong>
+  <%= mostrar_estado(@bicicletum) %>
+</p>
+
+<div>
+  <%= link_to "Edit this bicicleta", edit_bicicleta_path(@bicicletum) %> |
+  <%= link_to "Back to bicicleta", bicicletas_path %>
+
+  <%= button_to "Destroy this bicicleta", bicicleta_path(@bicicletum), method: :delete %>
+</div>
